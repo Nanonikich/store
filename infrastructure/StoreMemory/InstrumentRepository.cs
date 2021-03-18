@@ -7,9 +7,9 @@ namespace Store.Memory
     {
         private readonly Instrument[] instruments = new[]
         {
-            new Instrument(1, "Piano"),
-            new Instrument(2, "Bayan"),
-            new Instrument(3, "GGGGG"),
+            new Instrument(1, "99931840", "Veston", "Veston D-45 SP/BKS"),
+            new Instrument(2, "99923489", "Veston", "Veston F-38/BK"),
+            new Instrument(3, "99923490", "Veston", "Veston F-38/NT"),
         };
 
 
