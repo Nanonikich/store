@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace Store
 {
@@ -6,14 +7,31 @@ namespace Store
     {
         public int Id { get; }
 
+        public string VendorCode { get; }
+
+        public string Manufacturer { get; }
+
         public string Title { get; }
 
-        public Instrument(int id, string title)
+        public Instrument(int id, string vendorCode, string manufacturer, string title)
         {
             Id = id;
+            VendorCode = vendorCode;
+            Manufacturer = manufacturer;
             Title = title;
         }
 
+        internal static bool IsVendorCode(string s)
+        {
+            if (s == null)
+                return false;
 
+            s = s.Replace("-", "")
+                 .Replace(" ", "")
+                 .ToUpper();
+
+
+            return Regex.IsMatch(s, @"^\d{8}(\d{3})?$");
+        }
     }
 }

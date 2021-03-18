@@ -8,16 +8,17 @@ namespace Store.Web.Controllers
 {
     public class SearchController : Controller
     {
-        private readonly IInstrumentRepository instrumentRepository;
+        private readonly InstrumentService instrumentService;
 
-        public SearchController(IInstrumentRepository instrumentRepository)
+        public SearchController(InstrumentService instrumentService)
         {
-            this.instrumentRepository = instrumentRepository;
+            this.instrumentService = instrumentService;
         }
 
         public IActionResult Index(string query)
         {
-            var instruments = instrumentRepository.GetAllByTitle(query);
+            var instruments = instrumentService.GetAllByQuery(query);
+            
             return View(instruments);
         }
     }

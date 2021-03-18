@@ -26,6 +26,7 @@ namespace Store.Web
         {
             services.AddControllersWithViews();
             services.AddSingleton<IInstrumentRepository, InstrumentRepository>();
+            services.AddSingleton<InstrumentService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

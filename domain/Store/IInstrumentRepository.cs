@@ -8,6 +8,8 @@ namespace Store
 {
     public interface IInstrumentRepository
     {
-        Instrument[] GetAllByTitle(string titlePart);
+        Instrument[] GetAllByVendorCode(string vendorCode);
+
+        Instrument[] GetAllByTitleOrManufacturer(string titleOrManufacturer);
     }
 }
