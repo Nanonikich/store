@@ -13,9 +13,16 @@ namespace Store.Memory
         };
 
 
-        public Instrument[] GetAllByTitle(string titlePart)
+        public Instrument[] GetAllByTitleOrManufacturer(string query)
         {
-            return instruments.Where(instrument => instrument.Title.Contains(titlePart))
+            return instruments.Where(instrument => instrument.Manufacturer.Contains(query) 
+                                                || instrument.Title.Contains(query))
+                              .ToArray();
+        }
+
+        public Instrument[] GetAllByVendorCode(string vendorCode)
+        {
+            return instruments.Where(instrument => instrument.VendorCode == vendorCode)
                               .ToArray();
         }
     }
