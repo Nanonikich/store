@@ -13,12 +13,18 @@ namespace Store
 
         public string Title { get; }
 
-        public Instrument(int id, string vendorCode, string manufacturer, string title)
+        public string Description { get; }
+
+        public decimal Price { get; }
+
+        public Instrument(int id, string vendorCode, string manufacturer, string title, string description, decimal price)
         {
             Id = id;
             VendorCode = vendorCode;
             Manufacturer = manufacturer;
             Title = title;
+            Description = description;
+            Price = price;
         }
 
         internal static bool IsVendorCode(string s)

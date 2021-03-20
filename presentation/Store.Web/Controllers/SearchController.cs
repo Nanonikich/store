@@ -19,7 +19,7 @@ namespace Store.Web.Controllers
         {
             var instruments = instrumentService.GetAllByQuery(query);
             
-            return View(instruments);
+            return View("Index", instruments);
         }
     }
 }

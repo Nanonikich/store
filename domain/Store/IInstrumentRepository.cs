@@ -11,5 +11,6 @@ namespace Store
         Instrument[] GetAllByVendorCode(string vendorCode);
 
         Instrument[] GetAllByTitleOrManufacturer(string titleOrManufacturer);
+        Instrument GetById(int id);
     }
 }

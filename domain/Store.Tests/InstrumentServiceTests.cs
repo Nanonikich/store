@@ -15,9 +15,9 @@ namespace Store.Tests
         {
             var instrumentRepositoryStub = new Mock<IInstrumentRepository>();
             instrumentRepositoryStub.Setup(x => x.GetAllByVendorCode(It.IsAny<string>()))
-                                    .Returns(new[] { new Instrument(1, "", "", "") });
+                                    .Returns(new[] { new Instrument(1, "", "", "", "", 0m) });
             instrumentRepositoryStub.Setup(x => x.GetAllByTitleOrManufacturer(It.IsAny<string>()))
-                                    .Returns(new[] { new Instrument(2, "", "", "") });
+                                    .Returns(new[] { new Instrument(2, "", "", "", "", 0m) });
 
             var instrumentService = new InstrumentService(instrumentRepositoryStub.Object);
             var validVendorCode = "96532147";
@@ -31,10 +31,10 @@ namespace Store.Tests
         {
             var instrumentRepositoryStub = new Mock<IInstrumentRepository>();
             instrumentRepositoryStub.Setup(x => x.GetAllByVendorCode(It.IsAny<string>()))
-                                    .Returns(new[] { new Instrument(1, "", "", "") });
+                                    .Returns(new[] { new Instrument(1, "", "", "", "", 0m) });
 
             instrumentRepositoryStub.Setup(x => x.GetAllByTitleOrManufacturer(It.IsAny<string>()))
-                                    .Returns(new[] { new Instrument(2, "", "", "") });
+                                    .Returns(new[] { new Instrument(2, "", "", "", "", 0m) });
 
             var instrumentService = new InstrumentService(instrumentRepositoryStub.Object);
             
